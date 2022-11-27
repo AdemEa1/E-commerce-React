@@ -93,4 +93,4 @@ const BookInfo = ({ books, addToCart, cart }) => {
   );
 };
 
-export default BookInfo;
+export default BookInfo
