@@ -1,9 +1,9 @@
-import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import React, { useState } from "react";
 import { Link, useParams } from "react-router-dom";
-import Rating from "../components/ui/Rating";
-import Price from "../components/ui/Price";
 import Book from "../components/ui/Book";
+import Price from "../components/ui/Price";
+import Rating from "../components/ui/Rating";
 
 const BookInfo = ({ books, addToCart, cart }) => {
   const { id } = useParams();
@@ -35,7 +35,7 @@ const BookInfo = ({ books, addToCart, cart }) => {
                 <img src={book.url} alt="" className="book__selected--img" />
               </figure>
               <div className="book__selected--description">
-                <h2 className="book__seletcted--title">{book.title}</h2>
+                <h2 className="book__selected--title">{book.title}</h2>
                 <Rating rating={book.rating} />
                 <div className="book__selected--price">
                   <Price
@@ -44,24 +44,22 @@ const BookInfo = ({ books, addToCart, cart }) => {
                   />
                 </div>
                 <div className="book__summary">
-                  <h3 className="book__summary--t">Summary</h3>
+                  <h3 className="book__summary--title">Summary</h3>
                   <p className="book__summary--para">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Consectetur nemo ducimus, assumenda soluta laboriosam
-                    voluptatum facere quaerat mollitia sit excepturi delectus
-                    corporis sunt fugit debitis dolorum necessitatibus
-                    consequatur consequuntur rerum.
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                    Soluta aut dolorum ad illo vitae dolore blanditiis, autem
+                    consequuntur officia iste ea nam tenetur ipsum voluptas.
+                    Molestias praesentium itaque ad assumenda?
                   </p>
                   <p className="book__summary--para">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Consectetur nemo ducimus, assumenda soluta laboriosam
-                    voluptatum facere quaerat mollitia sit excepturi delectus
-                    corporis sunt fugit debitis dolorum necessitatibus
-                    consequatur consequuntur rerum.
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                    Soluta aut dolorum ad illo vitae dolore blanditiis, autem
+                    consequuntur officia iste ea nam tenetur ipsum voluptas.
+                    Molestias praesentium itaque ad assumenda?
                   </p>
                 </div>
                 {bookExistsOnCart() ? (
-                  <Link to={`/cart`}>
+                  <Link to="/cart" className="book__link">
                     <button className="btn">Checkout</button>
                   </Link>
                 ) : (
@@ -73,6 +71,7 @@ const BookInfo = ({ books, addToCart, cart }) => {
             </div>
           </div>
         </div>
+
         <div className="books__container">
           <div className="row">
             <div className="book__selected--top">
@@ -93,4 +92,4 @@ const BookInfo = ({ books, addToCart, cart }) => {
   );
 };
 
-export default BookInfo
+export default BookInfo;

@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router-dom";
 import Rating from "./Rating";
@@ -7,24 +7,20 @@ import Price from "./Price";
 const Book = ({ book }) => {
   const [img, setImg] = useState();
 
-  const mountedRef = useRef(false);
+  const mountedRef = useRef(true);
 
   useEffect(() => {
     const image = new Image();
     image.src = book.url;
     image.onload = () => {
       setTimeout(() => {
-        if (mountedRef.current) {
-          setImg(image);
-        }
+        setImg(image);
       }, 300);
     };
     return () => {
-      // when the component mounts
-      mountedRef.current = true;
+      mountedRef.current = false; //current checks current property, its how useRef works
     };
   });
-
   return (
     <div className="book">
       {img ? (

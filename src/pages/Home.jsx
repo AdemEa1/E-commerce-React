@@ -6,15 +6,15 @@ import Highlights from "../components/Highlights";
 import Landing from "../components/Landing";
 
 const Home = () => {
-    return (
-     <>
-    <Landing />
-    <Highlights />
-    <Featured />
-    <Discounted />
-    <Explore />
+  return (
+    <>
+      <Landing />
+      <Highlights />
+      <Featured />
+      <Discounted />
+      <Explore />
     </>
-    )
-}
+  );
+};
 
 export default Home;
